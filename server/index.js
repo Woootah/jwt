@@ -14,7 +14,8 @@ app.use(express.json());
 app.use(cookierParser()); 
 app.use(cors({
     origin: "https://jwhat.netlify.app", 
-    credentials: true
+    credentials: true, 
+    sameSite: true, 
 })); 
 
 
