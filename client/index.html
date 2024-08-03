@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCE 2024</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="form-wrapper">
+        <h1>CCE CTF <span>2024<span></h1>
+        <form id="user-form">
+            <div class="uname">
+                <input type="text"  id="username" placeholder="username" required autocomplete="off">
+            </div>
+            <button type="submit">Begin Hunt</button>
+        </form>
+    </div>
+    <div id="greetings">
+        <img src="./public/cat.png" alt="meowlow">
+        <h1 id="greetings-header"></h1>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $("#user-form").on("submit", function(e){
+                e.preventDefault()
+
+                const username = $("#username").val(); 
+
+                $.ajax({
+                    url: 'http://localhost:3000',
+                    method: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({ username: username }),
+                    xhrFields: {
+                        withCredentials: true
+                    }, 
+                    success: function(response) {
+                        // well well well
+                        alert("CCECTF{r3y4l_0r_f4kk3}"); 
+                        $("#form-wrapper").hide(); 
+                        $("#greetings").show(); 
+                        $("#greetings-header").html(`Meowlow <span>${username}</span>`); 
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        alert('An error occurred: ' + textStatus);
+                    }
+                });
+                
+            })
+
+        })
+    </script>
+</body>
+</html>

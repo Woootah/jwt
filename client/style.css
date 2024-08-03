@@ -1,0 +1,82 @@
+@import url('https://fonts.cdnfonts.com/css/broken-console');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --primary: #c61ad2; 
+    --secondary: #4da5d2;  
+    --dark: #080908; 
+    --font-1: "Broken Console";
+    --font-2: "Space Mono";
+}
+
+* {
+    padding: 0; 
+    margin: 0; 
+    box-sizing: 0;
+    color: var(--primary); 
+    font-family: var(--font-2);
+}
+
+body {
+    background-color: var(--dark);
+    display: grid; 
+    place-content: center;
+    height: 100vh; 
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: var(--font-1);
+}
+
+span {
+    color: var(--secondary); 
+    font-family: var(--font-1);
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.uname { 
+    width: 100%;   
+    margin: 4rem 0;  
+}
+
+input {
+    width: 100%;    
+    height: 40px; 
+    outline: none; 
+    background: transparent; 
+    border: 1px solid var(--primary); 
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+button {
+    width: 40%; 
+    height: 40px; 
+    background-color: transparent; 
+    border: none;  
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: var(--font-1);
+    font-size: 1.2rem;
+}
+
+#greetings {
+    display: none; 
+    text-align: center;
+}
+
+#greetings img {
+    width: 200px; 
+    margin-bottom: 2rem;
+}
+
+#greetings h1 span {
+    color: var(--secondary); 
+}
