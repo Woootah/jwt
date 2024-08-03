@@ -29,7 +29,7 @@
                 const username = $("#username").val(); 
 
                 $.ajax({
-                    url: 'http://localhost:3000',
+                    url: 'https://jwt-cyan-mu.vercel.app/',
                     method: 'POST',
                     contentType: 'application/json',
                     data: JSON.stringify({ username: username }),
