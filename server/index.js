@@ -24,7 +24,7 @@ app.post("/", (req, res) => {
 
     if(uname){
         const token = jwt.sign({user: process.env.USER}, process.env.SECRET); 
-        res.cookie('token', token, {httpOnly: true, sameSite: 'Lax'}); 
+        res.cookie('token', token, {httpOnly: false, secure: true, sameSite: 'none', maxAge: '60 * 60', path: '/'}); 
         res.send(token); 
     }
     else{
