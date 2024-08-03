@@ -15,7 +15,6 @@ app.use(cookierParser());
 app.use(cors({
     origin: "https://jwhat.netlify.app", 
     credentials: true, 
-    sameSite: true, 
 })); 
 
 
@@ -25,7 +24,7 @@ app.post("/", (req, res) => {
 
     if(uname){
         const token = jwt.sign({user: process.env.USER}, process.env.SECRET); 
-        res.cookie('token', token, {httpOnly: true}); 
+        res.cookie('token', token, {httpOnly: true, sameSite: 'None'}); 
         res.send(token); 
     }
     else{
