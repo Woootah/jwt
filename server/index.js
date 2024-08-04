@@ -29,7 +29,7 @@ app.post("/", (req, res) => {
             secure: true, 
             sameSite: 'none', 
             maxAge: 60 * 60 * 60, 
-            path: '/'}); 
+        }); 
             
         res.send(token); 
     }
